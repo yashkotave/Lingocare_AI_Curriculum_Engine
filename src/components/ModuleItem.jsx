@@ -3,6 +3,7 @@ import Collapse from './Collapse.jsx'
 import DeleteButton from './DeleteButton.jsx'
 import EditableText from './EditableText.jsx'
 import ExpandToggle from './ExpandToggle.jsx'
+import { moduleDomId } from '../utils/domIds.js'
 import TopicItem from './TopicItem.jsx'
 
 /**
@@ -22,8 +23,10 @@ import TopicItem from './TopicItem.jsx'
 function ModuleItem({ module, path, actions, focusId }) {
   return (
     <section
+      id={moduleDomId(module.id)}
+      // scroll-mt keeps the card off the very top edge when scrolled to.
       className={[
-        'rounded-xl border border-slate-200 bg-white shadow-sm',
+        'scroll-mt-6 rounded-xl border border-slate-200 bg-white shadow-sm',
         'transition-colors hover:border-brand-orange/40 focus-within:border-brand-orange/40',
       ].join(' ')}
     >
