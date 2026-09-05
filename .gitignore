@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local env files - never commit real keys.
+# .env.example is the committed placeholder.
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
