@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse -Force -Exclude node_modules | Where-Object { $_.FullName -notmatch 'node_modules' } | Select-Object -ExpandProperty FullName)",
+      "PowerShell(npm install *)",
+      "PowerShell(npm *)",
+      "PowerShell(npm run *)",
+      "PowerShell($env:CI=\"1\"; $out = & npm run dev -- --port 5199 2>&1 | Out-String -Stream | ForEach-Object { $_; if \\($_ -match 'ready in|error|warn'\\) { } } | Select-Object -First 20; $out)"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+/*
+ * Tailwind v4 uses CSS-first configuration: the theme lives here in `@theme`,
+ * not in a `tailwind.config.js` file.
+ *
+ * `--color-brand-orange` generates the full set of utilities:
+ *   bg-brand-orange, text-brand-orange, border-brand-orange, ring-brand-orange, ...
+ *
+ * Brand orange is an ACCENT. Use it for the primary action, focus rings, and
+ * small highlights. Do not use it as a page or card background.
+ */
+@theme {
+  --color-brand-orange: #ec8601;
+  /* Derived helpers: hover state for orange buttons, and a faint wash for
+     selected/active rows. Keep usage sparing. */
+  --color-brand-orange-dark: #d17700;
+  --color-brand-orange-tint: #fdf3e6;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
